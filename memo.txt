@@ -43,6 +43,33 @@ git status	ワークツリーとインデックスの状況をファイル単位
 git diff	ワークツリーとインデックスを比較して、その差分を表示する。
 git log	過去のコミット履歴を確認する。
 -----------------------------------
+<<<<<<< HEAD
+=======
+
+# GitHubへ反映
+GitHubへリポジトリを反映するための一連の流れ
+
+1,GitHubにリモートリポジトリを作成する
+「Repository name」に入力
+2,ローカルリポジトリにリモートリポジトリを登録する
+$ git remote add origin　URL
+
+リモートリポジトリの登録状況を確認
+$ git remote -v
+
+3,登録したリモートリポジトリへプッシュする
+$ git push -u origin master
+
+4,GitHubのリモートリポジトリにプッシュされたか確認する
+ブラウザにてhttps://github.com/michikong0615/「Repository name」
+
+まとめ
+-----------------------------------
+git remote add origin リモートリポジトリURL	ローカルリポジトリにリモートリポジトリを登録する
+git remote -v	ローカルリポジトリに登録されたリモートリポジトリの一覧を表示する
+git push origin master	登録したリモートリポジトリへプッシュする
+-----------------------------------
+>>>>>>> 481575b... GitHubに反映
 
 # GitHubへ反映
 GitHubへリポジトリを反映するための一連の流れ
@@ -84,6 +111,11 @@ control+Xの後にEnterで終了
 
 指定したコミットのコミットコメントを修正
 $ git commit --amend
+
+コミットコメントの修正
+$ git rebase --continue
+
+
 
 -----------------
 section2
