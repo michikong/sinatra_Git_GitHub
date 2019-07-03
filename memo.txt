@@ -129,5 +129,11 @@ $ gem install -N sinatra-reloader
 # 現在時刻の表示
 Time.now
 
+-----------------
+section3
+-----------------
 
+$ mkdir views
+$ cd views/
+$ touch index.erb
 
