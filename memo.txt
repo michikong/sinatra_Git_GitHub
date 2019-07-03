@@ -1,0 +1,49 @@
+-----------------
+Git/GitHub
+-----------------
+#グローバル設定（デフォルトの設定）
+$ git config --global user.name "user_name"
+$ git config --global user.email "user_email"
+
+#設定の確認
+$ git config --global -l
+
+#現在のワークツリーとインデックスの状況確認
+$ git status
+
+#バージョン管理の流れ
+1,リポジトリの作成（初期化）
+$ git init
+
+2,ファイルの変更
+
+3,ファイルの変更箇所のステージ
+$ git add ファイル名
+
+4,コミット
+$ git commit
+
+※nanoを立ち上げないでコメント
+$ git commit -m "コメント"
+
+コミット履歴の確認
+$ git log
+
+前回のコミットとの差分を確認
+$ git diff
+
+
+-----------------
+section2
+-----------------
+
+sinatraインストール
+
+$ gem install -N sinatra
+$ gem install -N sinatra-reloader
+
+# 現在時刻の表示
+Time.now
+
+
+
