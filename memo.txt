@@ -52,7 +52,7 @@ GitHubへリポジトリを反映するための一連の流れ
 1,GitHubにリモートリポジトリを作成する
 「Repository name」に入力
 2,ローカルリポジトリにリモートリポジトリを登録する
-$ git remote add origin　URL
+$ git remote add origin https://github.com/michikong0615/sinatra_Git_GitHub
 
 リモートリポジトリの登録状況を確認
 $ git remote -v
