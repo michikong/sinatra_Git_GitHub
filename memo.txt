@@ -43,33 +43,7 @@ git status	ワークツリーとインデックスの状況をファイル単位
 git diff	ワークツリーとインデックスを比較して、その差分を表示する。
 git log	過去のコミット履歴を確認する。
 -----------------------------------
-<<<<<<< HEAD
-=======
 
-# GitHubへ反映
-GitHubへリポジトリを反映するための一連の流れ
-
-1,GitHubにリモートリポジトリを作成する
-「Repository name」に入力
-2,ローカルリポジトリにリモートリポジトリを登録する
-$ git remote add origin https://github.com/michikong0615/sinatra_Git_GitHub
-
-リモートリポジトリの登録状況を確認
-$ git remote -v
-
-3,登録したリモートリポジトリへプッシュする
-$ git push -u origin master
-
-4,GitHubのリモートリポジトリにプッシュされたか確認する
-ブラウザにてhttps://github.com/michikong0615/「Repository name」
-
-まとめ
------------------------------------
-git remote add origin リモートリポジトリURL	ローカルリポジトリにリモートリポジトリを登録する
-git remote -v	ローカルリポジトリに登録されたリモートリポジトリの一覧を表示する
-git push origin master	登録したリモートリポジトリへプッシュする
------------------------------------
->>>>>>> 481575b... GitHubに反映
 
 # GitHubへ反映
 GitHubへリポジトリを反映するための一連の流れ
@@ -103,7 +77,7 @@ $ git log --oneline
 f04a9ca 復習←ここを変えたい
 2ef02db first commit
 
-コミットコメントを変更したいコミットの１つ直前のコミットを引数�����指定
+コミットコメントを変更したいコミットの１つ直前のコミットを引�������指定
 $ git rebase -i 2ef02db
 
 nanoにてコメント変更するコミットに「edit」を指定する
@@ -136,4 +110,8 @@ section3
 $ mkdir views
 $ cd views/
 $ touch index.erb
+$ pwd
+/home/ec2-user/environment/udemy_sinatra_2
+$ mkdir public
+$ touch public/style.css
 
