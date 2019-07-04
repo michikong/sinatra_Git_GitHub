@@ -7,6 +7,23 @@ https://qiita.com/wnoguchi/items/f7358a227dfe2640cce3
 nanoからvimに変更
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
+GitHubでユーザ名・パスワード省略
+https://qiita.com/azusanakano/items/8dc1d7e384b00239d4d9#1-clone%E6%B8%88%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%81%AE%E8%A8%AD%E5%AE%9A%E3%82%92%E5%A4%89%E6%9B%B4%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88
+
+
+$ vim ~/.netrc
+
+machine github.com
+login username
+password xxxxxxx
+
+$ vim .git/config
+
+[remote "origin"]
+  url = https://username:password@github.com/username/repository.git
+
+
+
 #グローバル設定（デフォルトの設定）
 $ git config --global user.name "user_name"
 $ git config --global user.email "user_email"
