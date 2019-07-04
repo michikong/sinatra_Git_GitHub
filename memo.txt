@@ -1,6 +1,10 @@
 -----------------
 Git/GitHub
 -----------------
+Gitをインストールしたら真っ先にやっておくべき初期設定
+https://qiita.com/wnoguchi/items/f7358a227dfe2640cce3
+
+
 #グローバル設定（デフォルトの設定）
 $ git config --global user.name "user_name"
 $ git config --global user.email "user_email"
