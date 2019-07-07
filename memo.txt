@@ -2,13 +2,11 @@
 疑問点
 -----------------
 
-sinatra/reloaderとは何か
-
+sinatra/reloaderとは
 通常は、アプリケーションを起動すると起動時にソースコードが読み込まれメモリに展開されて、ディスク上のコードを変更しても再度読み込むためにはsinatraを再起動する必要がある
 sinatra-reloaderが入っているとディスク上のコードが変更された場合、再起動しなくても読み込んでくれる
 
 requireとは何か
-
 require（意味は要求する）で、rubyのコードの読み込みをしていする
 progateのmenu.rbとfood.rbのところでも出てきたはず
 gemの読み込みも同様にrequireで指定する
@@ -20,7 +18,7 @@ Git/GitHub
 Gitをインストールしたら真っ先にやっておくべき初期設定
 https://qiita.com/wnoguchi/items/f7358a227dfe2640cce3
 
-nanoからvimに変更
+# nanoからvimに変更
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 GitHubでユーザ名・パスワード省略
@@ -28,10 +26,10 @@ https://qiita.com/azusanakano/items/8dc1d7e384b00239d4d9#1-clone%E6%B8%88%E3%81%
 
 
 $ vim ~/.netrc
-
-machine github.com
-login username
-password xxxxxxx
+   
+   machine github.com
+   login username
+   password xxxxxxx
 
 $ vim .git/config
 
@@ -40,40 +38,39 @@ $ vim .git/config
 
 
 
-#グローバル設定（デフォルトの設定）
-$ git config --global user.name "user_name"
-$ git config --global user.email "user_email"
+# グローバル設定（デフォルトの設定）
+git config --global user.name "user_name"
+git config --global user.email "user_email"
 
-#設定の確認
-$ git config --global -l
+# 設定の確認
+git config --global -l
 
-#現在のワークツリーとインデックスの状況確認
-$ git status
+# 現在のワークツリーとインデックスの状況確認
+git status
 
-#バージョン管理の流れ
-1,リポジトリの作成（初期化）
-$ git init
+# バージョン管理の流れ
+# 1,リポジトリの作成（初期化）
+git init
 
-2,ファイルの変更
+# ファイルの変更
+# 3,ファイルの変更箇所のステージ
+git add ファイル名
 
-3,ファイルの変更箇所のステージ
-$ git add ファイル名
+# 4,コミット
+git commit
 
-4,コミット
-$ git commit
+# nanoを立ち上げないでコメント
+git commit -m "コメント"
 
-※nanoを立ち上げないでコメント
-$ git commit -m "コメント"
+# コミット履歴の確認
+git log
 
-コミット履歴の確認
-$ git log
-
-前回のコミットとの差分を確認
-$ git diff
-
+# 前回のコミットとの差分を確認
+git diff
 
 
-まとめ
+
+コマンドまとめ
 -----------------------------------
 git init	現在のフォルダ内にリポジトリを作成し、ワークツリーとインデックスを用意する。
 git add ファイル名	新規追加や変更されたファイルを選択し、ステージさせる。
@@ -85,20 +82,20 @@ git log	過去のコミット履歴を確認する。
 
 
 # GitHubへ反映
-GitHubへリポジトリを反映するための一連の流れ
+# GitHubへリポジトリを反映するための一連の流れ
 
-1,GitHubにリモートリポジトリを作成する
+# 1,GitHubにリモートリポジトリを作成する
 「Repository name」に入力
-2,ローカルリポジトリにリモートリポジトリを登録する
-$ git remote add origin　URL
+# 2,ローカルリポジトリにリモートリポジトリを登録する
+git remote add origin　URL
 
-リモートリポジトリの登録状況を確認
-$ git remote -v
+# リモートリポジトリの登録状況を確認
+git remote -v
 
-3,登録したリモートリポジトリへプッシュする
-$ git push -u origin master
+# 3,登録したリモートリポジトリへプッシュする
+git push -u origin master
 
-4,GitHubのリモートリポジトリにプッシュされたか確認する
+# 4,GitHubのリモートリポジトリにプッシュされたか確認する
 ブラウザにてhttps://github.com/michikong0615/「Repository name」
 
 まとめ
@@ -110,23 +107,23 @@ git push origin master	登録したリモートリポジトリへプッシュす
 
 GitHubにpushした後にコメントの変更
 
-コミット履歴
-$ git log --oneline
-481575b (HEAD -> master, origin/master) GitHubに反映
-f04a9ca 復習←ここを変えたい
-2ef02db first commit
+# コミット履歴
+git log --oneline
+   481575b (HEAD -> master, origin/master) GitHubに反映
+   f04a9ca 復習←ここを変えたい
+   2ef02db first commit
 
-コミットコメントを変更したいコミットの１つ直前のコミットを引�������指定
-$ git rebase -i 2ef02db
+# コミットコメントを変更したいコミットの１つ直前のコミットを引�������指定
+git rebase -i 2ef02db
 
 nanoにてコメント変更するコミットに「edit」を指定する
 control+Xの後にEnterで終了
 
-指定したコミットのコミットコメントを修正
-$ git commit --amend
+# 指定したコミットのコミットコメントを修正
+git commit --amend
 
-コミットコメントの修正
-$ git rebase --continue
+# コミットコメントの修正
+git rebase --continue
 
 
 
@@ -134,10 +131,9 @@ $ git rebase --continue
 section2
 -----------------
 
-sinatraインストール
-
-$ gem install -N sinatra
-$ gem install -N sinatra-reloader
+# sinatraインストール
+gem install -N sinatra
+gem install -N sinatra-reloader
 
 # 現在時刻の表示
 Time.now
