@@ -175,21 +175,8 @@ formからPOSTされた情報が取り出せます。
 
 
 
+.gitignoreとは
+Gitリポジトリにおいて、
+意図的に追跡対象から外したい（無視したい）
+ファイルを設定するためのファイルです。
 
------------------
-section4:BundlerでGem管理
------------------
-
-bundlerとは
-作成されたGemfileをもとにgemをインストールするコマンドがbundle installです。
-https://qiita.com/io_fleming/items/14626a9cff44bc87e7db
-
-
-# bundleのインストール
-gem install bundler
-
-# Gemfileの作成
-bundle init
-
-Gimfileとは
-Railsアプリで利用するgemが記述されているファイルのことです。
