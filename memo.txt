@@ -232,3 +232,24 @@ Bundlerとは
 
 ・たくさんのGemをワンアクションで
 　インストールしてくれる。
+　
+　
+　
+-----------------
+section4:ActiveRecord導入
+-----------------
+
+ActiveRecordとは
+
+Wikipedia参照
+https://ja.wikipedia.org/wiki/Active_Record
+
+
+bundle install
+
+bundle exec rake -T
+
+アプリにDBのテーブルを作る
+bundle exec rake db:create_migration NAME=create_users
+
+bundle exec rake db:migrate
