@@ -16,6 +16,7 @@ get '/' do
 end
 
 get '/contact_new' do
+    @contact = Contact.new
     erb :contact_form
 end
 
@@ -25,8 +26,12 @@ post '/contacts' do
     
     name = params[:name]
     # DBに保存
-    contact = Contact.new({name: name})
-    contact.save
-    
-    redirect '/'
+    @contact = Contact.new({name: name})
+    if @contact.save
+        #true
+        redirect '/'
+    else
+        erb :contact_form 
+    end
+        #folse
 end
