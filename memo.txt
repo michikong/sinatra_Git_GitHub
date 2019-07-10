@@ -241,6 +241,18 @@ section4:ActiveRecord導入
 
 ActiveRecordとは
 
+・Datebaseの操作をRubyから簡単に行うための仕組み。
+・SQLを裏でうまく作成してくれるので、
+　SQLが苦手でもある程度扱える。
+　
+ActiveRecordとDBのCRUD
+
+CRUD        メソッド       意味
+SELECT      find, all      取得する
+INSERT      create, save   作成する
+UPDATE      update, save   更新する
+DELETE      destory        削除する
+
 Wikipedia参照
 https://ja.wikipedia.org/wiki/Active_Record
 
