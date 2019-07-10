@@ -121,6 +121,8 @@ control+Xの後にEnterで終了
 
 # 指定したコミットのコミットコメントを修正
 git commit --amend
+一個前のコミットコメントを修正
+git commit --amend -m '新しいコメント'
 
 # コミットコメントの修正
 git rebase --continue
