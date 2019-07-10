@@ -253,3 +253,8 @@ bundle exec rake -T
 bundle exec rake db:create_migration NAME=create_users
 
 bundle exec rake db:migrate
+
+-----------------
+section4:DBにデータを保存する
+-----------------
+
