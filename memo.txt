@@ -113,7 +113,7 @@ git log --oneline
    f04a9ca 復習←ここを変えたい
    2ef02db first commit
 
-# コミットコメントを変更したいコミットの１つ直前のコミットを引�������指定
+# コミットコメントを変更したいコミットの１つ直前のコミットを引数を指定
 git rebase -i 2ef02db
 
 nanoにてコメント変更するコミットに「edit」を指定する
@@ -292,3 +292,28 @@ section4:セクションを利用したメッセージ
 セクションとは
 論理的な意味での開始から終了まで（を意図する単位）
 https://wa3.i-3-i.info/word1791.html
+
+-----------------
+section5:irbでのActiveRecord操作メモを追加
+-----------------
+
+# ./app.rbの中身を読み込みながら起動
+irb -r ./app.rb
+
+Contactの一覧を確認
+>　Contact.all
+
+追加
+>　Contact.create(name:"irb")
+
+取得
+>　c = Contact.find(12)
+
+削除
+>　c.destroy
+
+一番最新の情報を取得
+>　Contact.last
+
+全て削除
+>　Contact.destroy_all
