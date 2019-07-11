@@ -337,4 +337,13 @@ schema.rbとは
 -----------------
 https://qiita.com/k0kubun/items/491a9d9f2745335566e3
 
+-----------------
+section6:UIを調整
+-----------------
+
+
+# 失敗した場合の詳細を表示(!)
+> Contact.create!
+
+
 
