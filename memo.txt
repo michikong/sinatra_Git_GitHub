@@ -277,6 +277,7 @@ section4:マイグレーションとは
 マイグレーションは、基幹システムを新しいプラットフォ
 ームへ移行したり、OSやハードウェアなどの環境が異なる
 システムへの移行を指す場合が多い。
+https://wa3.i-3-i.info/word17035.html
 
 -----------------
 section4:バリデーション(validation)とは
@@ -317,3 +318,23 @@ Contactの一覧を確認
 
 全て削除
 >　Contact.destroy_all
+
+-----------------
+section6:emailカラムを追加
+-----------------
+
+# 新しいマイグレーションファイルを作成
+bundle exec rake db:create_migration NAME=add_email_to_contacts
+
+# 
+bundle exec rake db:migrate
+
+# 一個戻る
+bundle exec rake db:rollback
+
+-----------------
+schema.rbとは
+-----------------
+https://qiita.com/k0kubun/items/491a9d9f2745335566e3
+
+
