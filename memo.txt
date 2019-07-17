@@ -145,6 +145,10 @@ git commit --amend -m '新しいコメント'
 # コミットコメントの修正
 git rebase --continue
 
+# コメントを修正した場合の強制
+git push -f [repository] [branch]
+
+https://qiita.com/ykawakami/items/71b462057a8d714d7382#%E3%83%AA%E3%83%A2%E3%83%BC%E3%83%88%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%83%BC%E3%81%AB%E5%86%8Dpush%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95
 
 
 -----------------
