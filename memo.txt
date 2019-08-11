@@ -264,7 +264,7 @@ section4:ActiveRecord導入
 ActiveRecordとは
 
 ・RubyとSQLの翻訳機
-・Datebaseの操作をRubyから簡単に行うための仕組み。
+・Datebaseの操作をRubyから簡単に行うための仕組み���
 ・SQLを裏でうまく作成してくれるので、
 ・SQLが苦手でもある程度扱える。
 　
@@ -370,3 +370,8 @@ section6:UIを調整
 
 
 
+
+
+
+
+Udemyの14~26の疑問点を出す
