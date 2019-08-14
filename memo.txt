@@ -139,7 +139,7 @@ control+Xの後にEnterで終了
 
 # 指定したコミットのコミットコメントを修正
 git commit --amend
-一個前のコミットコメントを修正
+一個前のコミットコメン���を修正
 git commit --amend -m '新しいコメント'
 
 # コミットコメントの修正
@@ -264,7 +264,7 @@ section4:ActiveRecord導入
 ActiveRecordとは
 
 ・RubyとSQLの翻訳機
-・Datebaseの操作をRubyから簡単に行うための仕組み���
+・Datebaseの操作をRubyから簡単に行うための仕組み����
 ・SQLを裏でうまく作成してくれるので、
 ・SQLが苦手でもある程度扱える。
 　
@@ -374,4 +374,72 @@ section6:UIを調整
 
 
 
-Udemyの14~26の疑問点を出す
+▼Udemyの14~26の疑問点を出す
+
+
+14
+
+Gemとは
+bundlerとは
+
+https://bundler.io/
+Getting Started
+始めるにはこうしたらいいよ
+
+https://bundler.io/v2.0/guides/sinatra.html
+
+bundlerの導入
+gem install bundler
+
+簡単なGemファイルを作成
+bundle initとは
+
+gem 'sinatra'
+gem 'sinatra-reloader'とは
+
+
+Gemfileから内容���読んでくるような準備部分をapp.rbの先頭に記載
+Gemfileで導入したGemをこの記述で読み込める
+
+require 'rubygems'
+require 'bundler'
+
+Bundler.require
+
+# 取ってきたGimfileをひとまとまりにvendor/bundleに入れる
+bundle install --path vendor/bundle
+
+# Gemの扱いをbundler経由にしている
+サービスを起動
+bundle exec ruby app.rb
+
+
+
+15
+
+Gemとbundler
+Rubyで用意されている
+-----------------
+gemとは
+-----------------
+
+・誰かが作ってくれたソースコードのパッケージを
+自分のプログラムにうまく取り込むための仕組み
+
+・外部モジュール
+
+・開発ではGemに頼ることはとても多い
+
+
+-----------------
+Bundlerとは
+-----------------
+
+・Gemを管理する仕組み
+
+・たくさんのGemをワンアクションで
+　インストールしてくれる。
+　
+必要なGemをGemfileに記載して、
+# bundle install
+とするとインストールして組み込んでくれる便利な仕組み
