@@ -443,3 +443,86 @@ Bundlerとは
 必要なGemをGemfileに記載して、
 # bundle install
 とするとインストールして組み込んでくれる便利な仕組み
+
+
+16
+
+▼Sinatra ActiveRecord Extension
+
+https://github.com/janko/sinatra-activerecord
+Gemfileにこの内容書いてねー
+
+gem "sinatra-activerecord"
+gem "sqlite3"
+gem "rake"とは
+
+app.rbに書いてねー
+
+set :database, {adapter: "sqlite3", database: "contacts.sqlite3"}疑問
+
+特殊な時に必要今回は関係ない。
+class YourApplication < Sinatra::Base
+  register Sinatra::ActiveRecordExtension
+end
+
+
+疑問# Rakefileを作成
+require "sinatra/activerecord/rake"
+
+namespace :db do
+  task :load_config do
+    require "./app"
+  end
+end
+
+
+bundle exec rake -Tとは何をしてる？
+
+マイグレーションファイルを作成(今回はcreate_contactsという名前で)
+bundle exec rake db:create_migration NAME=create_contacts
+
+マイグレーションとは
+databaseの変更をする為の設定ファイル
+
+疑問マイグレーションファイル
+class CreateContacts < ActiveRecord::Migration 
+  def change
+    create_tableテーブル作成 :contacts名前 do |t|
+      t.string文字列 :nameカラム
+    end
+  end
+end
+
+# databaseに反映される。
+bundle exec rake db:migrateとは
+
+疑問app.rb入れ物を作ってる？？？
+class Contact < ActiveRecord::Base
+  validates_presence_of :name名前は必ず入れなくてはいけないチェックとは？？？
+end
+
+
+疑問get '/users' do
+  @users = User.all全件ユーザとれる
+  erb :index
+end
+
+get '/users/:id' do
+  @user = User.find(params[:id])そのIDを持っているユーザの情報が一件取れる
+  erb :show
+end
+
+Gemを新しく追加するとbundle installを再度行わなくてはならない。
+
+shema.rbとは
+マイグレーション経由で作った内容が全件入っているとは
+
+app.rb
+
+name = params[:name]
+
+contact = Contact.new({name: name)とは
+contact.saveでcontacts.sqlite3にsaveされる？？？？
+
+
+
