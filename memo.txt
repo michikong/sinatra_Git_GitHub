@@ -526,3 +526,21 @@ contact.saveでcontacts.sqlite3にsaveされる？？？？
 
 
 
+
+
+17
+取ってきたデータをテーブルの形式で表示する
+
+app.rb
+
+@contacts = Contact.all
+contactの内容が全件取れる
+
+index.erb
+
+<% @contacts.each do |contact| %>
+   <tr>
+      <td><%= contact.id %></td>
+      <td><%= contact.name %></td>
+   </tr>
+<% end %>
