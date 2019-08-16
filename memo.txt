@@ -566,3 +566,38 @@ update
 削除する
 delete
 
+
+
+19
+-----------------
+ActiveRecordとは
+-----------------
+・RubyとSQLの翻訳機
+・Datebaseの操作をRubyから簡単に行うための仕組み。
+・SQLを裏でうまく作成してくれるので、
+・SQLが苦手でもある程度扱える。
+　
+　
+
+▼ActiveRecord
+Contactモデルとは
+Contactインスタンスとは
+
+▼Datebase
+contactsテーブル
+contactsレコード
+同じように扱える
+Rubyの中でうまく置き換わっているので、操作できる。
+
+
+ActiveRecordとDBのCRUD
+
+CRUD        メソッド       意味
+SELECT      find, all      取得する
+INSERT      create, save   作成する
+UPDATE      update, save   更新する
+DELETE      destory        削除する
+
+
+それぞれのメソッドを使うと対応しているSQLが発行される
+
