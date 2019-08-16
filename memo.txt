@@ -544,3 +544,25 @@ index.erb
       <td><%= contact.name %></td>
    </tr>
 <% end %>
+
+18
+databaseとは
+mysqlの
+
+テーブルとは
+レコードとは
+項目＝カラム
+行＝レコード
+
+レコードを取り出す
+select 
+
+新しい行を追加する
+insert
+
+更新する
+update
+
+削除する
+delete
+
