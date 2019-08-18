@@ -627,3 +627,41 @@ A,公開サーバへの反映時にも現実的ではない
 マイグレーションという形でDBの変更をテキストにして送るのが現実的
 誰かと一緒に開発する場面ですごく便利。
 
+
+
+21
+バリデーションとは
+
+app.rb
+
+validates_presence_of :name
+nameが無ければ、保存が失敗する。
+
+
+if文にて
+入力が失敗すれば、再度コンタクトフォームに戻るように設定
+#folse
+erb :contact_form 
+
+
+contact_form.eb
+<% if @contact.errors.present? %>
+         エラーがあります。
+         <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+               <li><%= message %></li>
+            <% end %>
+         </ul>
+      <% end %>
+      
+contactのerrorsメソッドとは
+present?とは中身が入ってますか？というメソッド
+errors.full_messages全てのエラーメッセージを取ってこれる
+
+メッセージごとにループしてエラーメッセージを表示する。
+
+@contactインスタンス変数にしてあるので、app.rbのローカル変数(contact)もインスタンス変数(@contact)
+にしておかなければならない。
+
+
+
