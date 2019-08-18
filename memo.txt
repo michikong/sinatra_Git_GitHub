@@ -702,3 +702,37 @@ app.rbの
     
 redirect '/'で断絶するとは、、、？
 通信の内容と一緒に考える？？？
+
+
+23
+
+irbのデータ操作
+
+irbとは
+
+irb -r ./app.rb
+app.rbの中身を読み込みながら起動する
+
+Contact.all
+
+作成
+Contact.create(name:"irb", email:'irb@test')
+
+検索して情報を取ってくる
+Contact.find(IDの数)
+
+変数に格納
+Contact.find(IDの数)
+
+削除
+c.destroy
+
+最新の格納した値を取ってくる
+Contact.last
+
+中身を全て削除
+Contact.destroy_all
+
+終了
+exit
+
