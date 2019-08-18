@@ -759,3 +759,27 @@ bundle exec rake db:rollbackとは
 
 schema.ebに反映させる
 bundle exec rake db:migrateとは
+
+
+
+25
+カラム追加のUI対応
+
+irbはモデルの所に書いたものをいきなり反映してくれないので、
+class Contact < ActiveRecord::Base
+  validates_presence_of :name
+  validates_presence_of :email
+end
+一回exitする
+
+Contact.new
+
+Contact.create
+
+Contact.create!
+失敗した時の詳細が出る
+
+スタックトレース
+どんな過程でエラーが出たかの情報
+
+
