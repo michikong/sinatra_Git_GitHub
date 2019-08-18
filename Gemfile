@@ -10,3 +10,4 @@ gem "sinatra-activerecord"
 gem "sqlite3"
 gem "rake"
 gem "pry"
+gem 'pry-byebug'
