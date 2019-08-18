@@ -736,3 +736,26 @@ Contact.destroy_all
 終了
 exit
 
+
+
+
+24
+カラム追加のマイグレート
+マイグレートとは
+
+新たにマイグレーションファイルを作成
+bundle exec rake db:create_migration NAME=任意の名前
+
+現在のテーブル構造の情報が載っている
+schema.rb
+
+add_email_to_contactsの
+add_column :contacts, :email, :string
+とは
+
+追加したの間違えた場合
+# 一個戻る
+bundle exec rake db:rollbackとは
+
+schema.ebに反映させる
+bundle exec rake db:migrateとは
