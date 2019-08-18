@@ -3,7 +3,7 @@ require 'bundler'
 
 Bundler.require
 
-set :database, {adapter: "sqlite3", database: "info.sqlite3"}
+set :database, {adapter: "sqlite3", database: "contacts.sqlite3"}
 enable :sessions
 
 class Contact < ActiveRecord::Base
