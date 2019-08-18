@@ -665,3 +665,40 @@ errors.full_messages全てのエラーメッセージを取ってこれる
 
 
 
+22
+セッションとは
+
+sinatraのセッションの機能を有効
+enable :sessions
+
+session[:messageラベル] = "#{name}さんを作成しました"
+
+セッションの中身を取り出す
+@message = session[:message]
+セッションの中からメッセージのラベルの内容を取り出して、かつ、中身を消す。
+@message = session.delete :message
+
+index.erb
+
+<% if @message %>
+         <div class="message"><%= @message %></div>
+<% end %>
+
+変数@messageの中身が入っていさえすれば、表示される。
+
+
+
+
+app.rbの
+
+    if @contact.save
+        #true
+        session[:message] = "#{name}さんを作成しました"
+        redirect '/'
+    else
+        #folse
+        erb :contact_form 
+    end
+    
+redirect '/'で断絶するとは、、、？
+通信の内容と一緒に考える？？？
