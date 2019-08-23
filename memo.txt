@@ -384,33 +384,31 @@ bundlerとは
 
 https://bundler.io/
 Getting Started
-始めるにはこうしたらいいよ
+⬆️意味(始めるにはこうしたらいいよ)
 
+bundlerの導入サイト
 https://bundler.io/v2.0/guides/sinatra.html
 
-bundlerの導入
+# bundlerの導入
 gem install bundler
 
-簡単なGemファイルを作成
-bundle initとは
-
-gem 'sinatra'
-gem 'sinatra-reloader'とは
+# Gemfileの初期ファイルを作成
+bundle init
 
 
-Gemfileから内容���読んでくるような準備部分をapp.rbの先頭に記載
+Gemfileから��容を読んでくるような準備部分をapp.rbの先頭に記載
 Gemfileで導入したGemをこの記述で読み込める
+app.rb
 
-require 'rubygems'
-require 'bundler'
-
-Bundler.require
+   require 'rubygems'
+   require 'bundler'
+   
+   Bundler.require
 
 # 取ってきたGimfileをひとまとまりにvendor/bundleに入れる
 bundle install --path vendor/bundle
 
-# Gemの扱いをbundler経由にしている
-サービスを起動
+# Gemの扱いをbundler経由にしてサービスを起動
 bundle exec ruby app.rb
 
 
@@ -449,16 +447,16 @@ Bundlerとは
 
 ▼Sinatra ActiveRecord Extension
 
+参考サイト
 https://github.com/janko/sinatra-activerecord
-Gemfileにこの内容書いてねー
 
+開発するにあたってGemfileに記述する内容
 gem "sinatra-activerecord"
 gem "sqlite3"
 gem "rake"とは
 
-app.rbに書いてねー
-
-set :database, {adapter: "sqlite3", database: "contacts.sqlite3"}疑問
+開発するにあたってapp.rbに記述する内容
+set :database, {adapter: "sqlite3", database: "contacts.sqlite3"}
 
 特殊な時に必要今回は関係ない。
 class YourApplication < Sinatra::Base
@@ -478,16 +476,19 @@ end
 
 bundle exec rake -Tとは何をしてる？
 
-マイグレーションファイルを作成(今回はcreate_contactsという名前で)
+# マイグレーションファイルを作成(今回はcreate_contactsという名前で)
 bundle exec rake db:create_migration NAME=create_contacts
 
-マイグレーションとは
+マイグレーションファイルとは
 databaseの変更をする為の設定ファイル
+
+マイグレーションとは
+テーブルの作成と、変更などを行うこと
 
 疑問マイグレーションファイル
 class CreateContacts < ActiveRecord::Migration 
   def change
-    create_tableテーブル作成 :contacts名前 do |t|
+    create_tableテーブル作成 :contactsテーブル名前 do |t|
       t.string文字列 :nameカラム
     end
   end
@@ -515,15 +516,15 @@ end
 Gemを新しく追加するとbundle installを再度行わなくてはならない。
 
 shema.rbとは
-マイグレーション経由で作った内容が全件入っているとは
+マイグレーション経由で作った内容が全件入っている
 
 app.rb
-
-name = params[:name]
-
-contact = Contact.new({name: name)とは
-contact.saveでcontacts.sqlite3にsaveされる？？？？
-
+   
+   name = params[:name]
+   
+   contact = Contact.new({name: name)
+   contact.saveでcontacts.sqlite3でSQLが発行される
+   
 
 
 
@@ -533,21 +534,21 @@ contact.saveでcontacts.sqlite3にsaveされる？？？？
 
 app.rb
 
-@contacts = Contact.all
-contactの内容が全件取れる
-
+   @contacts = Contact.all
+   contactの内容が全件取れる
+   
 index.erb
 
-<% @contacts.each do |contact| %>
-   <tr>
-      <td><%= contact.id %></td>
-      <td><%= contact.name %></td>
-   </tr>
-<% end %>
+   <% @contacts.each do |contact| %>
+      <tr>
+         <td><%= contact.id %></td>
+         <td><%= contact.name %></td>
+      </tr>
+   <% end %>
 
 18
 databaseとは
-mysqlの
+
 
 テーブルとは
 レコードとは
